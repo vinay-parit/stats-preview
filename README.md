@@ -3,8 +3,8 @@
 
 ### Links
 
-- Solution URL: [Github](https://github.com/vinay-parit/four-card)
-- Live Site URL: [Netlify Link](https://qrcode-vitthal.netlify.app/)
+- Solution URL: [Github](https://github.com/vinay-parit/stats-preview)
+- Live Site URL: [Vercel Link](https://stats-preview-orpin.vercel.app/)
 
 ### ScreenShot
 
