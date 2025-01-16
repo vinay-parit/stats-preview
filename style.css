@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,700;1,14..32,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Very-dark-blue: hsl(233, 47%, 7%);
+  --Dark-desaturated-blue: hsl(244, 38%, 16%);
+  --Soft-violet: hsl(277, 64%, 61%);
+  --White: hsl(0, 0%, 100%); /*(main heading, stats) */
+  --Slightly-transparent-white: hsla(0, 0%, 100%, 0.75); /*(main paragraph) */
+  --Slightly-transparent-white2: hsla(0, 0%, 100%, 0.6); /*(stat headings)*/
+  --font-family: "Inter", serif;
+  --font-family2: "Lexend Deca", serif;
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--Very-dark-blue);
+  color: var(--White);
+  font-family: var(--font-family);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parent {
+  height: 50%;
+  width: 70%;
+  display: flex;
+}
+
+.left,
+.right {
+  width: 50%;
+}
+
+.right {
+  position: relative;
+  display: inline-block;
+}
+
+.right::after,
+.right::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--Soft-violet);
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+
+.right > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1; /* Places the image below the overlay */
+}
+
+/* ------- Left -------- */
+.left {
+  background-color: var(--Dark-desaturated-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.left > h2 {
+  width: 70%;
+  font-family: var(--font-family2);
+  font-size: 33.5px;
+}
+.left > p {
+  width: 70%;
+  font-family: var(--font-family2);
+  color: var(--Slightly-transparent-white2);
+  /* align-self: justify; */
+  font-size: 15px;
+}
+
+.left > h2 > span {
+  color: var(--Soft-violet);
+}
+
+/* -------- Mini ------- */
+.mini-parent {
+  display: flex;
+  gap: 60px;
+}
+.one > p {
+  font-family: var(--font-family2);
+  color: var(--Slightly-transparent-white2);
+  font-size: 10px;
+}
+.two > p {
+  font-family: var(--font-family2);
+  color: var(--Slightly-transparent-white2);
+  font-size: 10px;
+}
+.three > p {
+  font-family: var(--font-family2);
+  color: var(--Slightly-transparent-white2);
+  font-size: 10px;
+}
+
+/* ----------- Right ---------- */
+/* .right{
+    background-color: var(--Soft-violet);
+    position: relative;
+    mix-blend-mode: screen;
+} */
+
+.right > img {
+  height: 100%;
+  width: 100%;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+@media (max-width: 375px) {
+  .parent {
+    align-items: center;
+    flex-direction: column-reverse;
+    width: 80%;
+    height: 65%;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+  .right > img {
+    width: 299px;
+    height: 250px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 5px;
+  }
+  .left {
+    margin-top: -4px;
+    border-top-left-radius: 0;
+    padding-bottom: 30px;
+    border-bottom-right-radius: 5px;
+  }
+  .left > h2 {
+    padding-top: 30px;
+    text-align: center;
+    font-size: 23px;
+  }
+  .left > p {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .mini-parent {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
